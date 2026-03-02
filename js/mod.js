@@ -1,11 +1,11 @@
 let modInfo = {
-	name: "The Modding Tree",
-	id: "mymod",
-	author: "",
+	name: "reality incremental",
+	id: "realityInc",
+	author: "TheRaceDev",
 	pointsName: "points",
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new ExpantaNum (10), // Used for hard resets and new players
+	initialStartPoints: new ExpantaNum(0), // Used for hard resets and new players
 	
 	offlineLimit: 1,  // In hours
 }
@@ -13,7 +13,7 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "",
+	name: "Init",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -42,6 +42,18 @@ function getPointGen() {
 		return new ExpantaNum(0)
 
 	let gain = new ExpantaNum(1)
+	if (hasUpgrade("p", 11)) gain = gain.times(1.5)
+	if (hasUpgrade("p", 12)) gain = gain.times(2)
+	gain = gain.times(ExpantaNum.pow(1.5, getBuyableAmount("p", 11)))
+    if (hasUpgrade("p", 14)) gain = gain.times(5)
+	if (hasUpgrade("p", 15)) gain = gain.times(upgradeEffect("p", 15))
+	if (hasUpgrade("p", 17)) gain = gain.times(10)
+	if (hasUpgrade("p", 18)) gain = gain.times(upgradeEffect("p", 18))
+	gain = gain.times(tmp.pos.effect)
+    if (hasUpgrade("pos", 11)) gain = gain.times(1.5)
+	if (hasUpgrade("pos", 16)) gain = gain.times(3)
+	if (hasUpgrade("pos", 18)) gain = gain.pow(1.1)
+	if (hasUpgrade("pos", 19)) gain = gain.div(tmp.neg.effect)
 	return gain
 }
 
