@@ -83,7 +83,7 @@ addLayer("ach", {
         },
 
         18: {
-            name: "Lets goooo",
+            name: "Milion Prestige",
             tooltip: "Get 1,000,000 Prestige points",
             done() {return player.p.points.gte(1000000)},
             onComplete() {player.ach.points = player.ach.points.add(1)},
@@ -122,6 +122,118 @@ addLayer("ach", {
             tooltip: "Get 1 Negativity Point",
             done() { return player.neg.points.gte(1) },
             onComplete() { player.ach.points = player.ach.points.add(1) },
-        }
+        },
+
+        25: {
+            name: "More negative",
+            tooltip: "Get 1,000,000 negativity",
+            done() { return player.neg.points.gte(1000000) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        26: {
+            name: "now its equal?",
+            tooltip: "Get 1 equality point",
+            done() { return player.eq.points.gte(1) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        27: {
+            name: "getting passive",
+            tooltip: "get 3 equality points",
+            done() { return player.eq.points.gte(3) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        28: {
+            name: "Now its very equal",
+            tooltip: "get 10 Equality Points",
+            done() { return player.eq.points.gte(10) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        29: {
+            name: "Scalings hitting hard",
+            tooltip: "get 30 Equality Points",
+            done() { return player.eq.points.gte(30) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        31: {
+            name: "something very new",
+            tooltip: "get 1 Equality power",
+            done() { return player.eq.power.gte(1) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        32: {
+            name: "Get powerful",
+            tooltip: "get 5 Equality power",
+            done() { return player.eq.power.gte(5) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        33: {
+            name: "realitied",
+            tooltip: "Get 1 Reality Point",
+            done() { return player.real.points.gte(1) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        34: {
+            name: "Creating multiverses?",
+            tooltip: "Get 10,000 universes",
+            done() { return player.real.universes.gte(10000) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        35: {
+            name: "omg",
+            tooltip: "Get 1 multiverse",
+            done() { return player.real.multiverses.gte(1) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        36: {
+            name: "big space",
+            tooltip: "Get 300 multiverses",
+            done() { return player.real.multiverses.gte(300) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        37: {
+            name: "its dark",
+            tooltip: "Get 1 dark matter",
+            done() { return player.real.darkMatter.gte(1) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        38: {
+            name: "mega dark",
+            tooltip: "Get 5 dark matter",
+            done() { return player.real.darkMatter.gte(5) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        39: {
+            name: "filling the space",
+            tooltip: "Get 100,000 Multiverses",
+            done() { return player.real.multiverses.gte(100000) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        41: {
+            name: "shifting it",
+            tooltip: "get 1 Reality shift",
+            done() { return player.real.realityShifts.gte(1) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
+
+        42: {
+            name: "great shifter",
+            tooltip: "get 3 Reality shifts",
+            done() { return player.real.realityShifts.gte(3) },
+            onComplete() { player.ach.points = player.ach.points.add(1) },
+        },
     }
 })
