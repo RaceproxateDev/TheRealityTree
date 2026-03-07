@@ -54,6 +54,19 @@ function getPointGen() {
 	if (hasUpgrade("pos", 16)) gain = gain.times(3)
 	if (hasUpgrade("pos", 18)) gain = gain.pow(1.1)
 	if (hasUpgrade("pos", 19)) gain = gain.div(tmp.neg.effect)
+	if (hasUpgrade("neg", 14)) gain = gain.div(10)
+	if (hasUpgrade("neg", 16)) gain = gain.pow(1.1)
+	if (hasMilestone("eq", 0)) gain = gain.pow(1.15)
+	if (hasMilestone("eq", 2)) gain = gain.pow(1.35)
+	if (hasMilestone("eq", 3)) gain = gain.pow(1.5)
+	if (hasMilestone("eq", 5)) gain = gain.pow(1.35)
+	if (hasMilestone("eq", 5)) gain = gain.times(3)
+	if (hasMilestone("eq", 6)) gain = gain.times("1e1000")
+	if (hasMilestone("eq", 7)) gain = gain.pow(1.5)
+	if (hasUpgrade("eq", 11)) gain = gain.pow(1.1)
+	if (hasUpgrade("eq", 13)) gain = gain.pow(1.45)
+	if (hasUpgrade("real", 11)) gain = gain.times(10)
+	if (hasUpgrade("real", 53)) gain = gain.times(upgradeEffect("real", 53))
 	return gain
 }
 
@@ -63,11 +76,12 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
+	"Endgame: <h3 style='color: rgb(255, 0, 255);'> 3 Reality shifts </h3>"
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return false
+	return player.real.realityShifts.gte(3)
 }
 
 
