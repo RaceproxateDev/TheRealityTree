@@ -798,7 +798,7 @@ addLayer("real", {
     color: "purple",
     resource: "Reality Points",            // The name of this layer's main prestige resource.
     row: 2,                                 // The row this layer is on (0 is the first row).
-    symbol: "🌌",
+    symbol: "R",
 
     baseResource: "Equality points",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.eq.points },  // A function to return the current amount of baseResource.
