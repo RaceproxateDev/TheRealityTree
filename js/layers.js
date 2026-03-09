@@ -150,7 +150,7 @@ addLayer("p", {
 
             buyMax() {
             
-                if (hasMilestone("eq", 4)) {setInterval(this.buy(), 500)}
+                if (hasMilestone("eq", 4)) {setInterval(this.buy(), 100)}
                
             },
         }
@@ -773,7 +773,11 @@ addLayer("eq", {
         layerDataReset(this.layer, keep)
 
         player[this.layer].milestones.push(...keepMilestones)
-    }
+    },
+
+    hotkeys: [
+        {key: "e", description: "E: Reset for Equality points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
 })
 
 addLayer("real", {
@@ -798,7 +802,7 @@ addLayer("real", {
     color: "purple",
     resource: "Reality Points",            // The name of this layer's main prestige resource.
     row: 2,                                 // The row this layer is on (0 is the first row).
-    symbol: "R",
+    symbol: "🌌",
 
     baseResource: "Equality points",                 // The name of the resource your prestige gain is based on.
     baseAmount() { return player.eq.points },  // A function to return the current amount of baseResource.
@@ -1354,4 +1358,8 @@ addLayer("real", {
             unlocked() { return hasMilestone("real", 1) },
         },
     },
+
+    hotkeys: [
+        {key: "r", description: "R: Reset for Reality points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
 })
