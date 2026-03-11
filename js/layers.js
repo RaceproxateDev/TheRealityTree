@@ -150,7 +150,7 @@ addLayer("p", {
 
             buyMax() {
             
-                if (hasMilestone("eq", 4)) {setInterval(this.buy(), 100)}
+                if (hasMilestone("eq", 4)) {this.buy()}
                
             },
         }
